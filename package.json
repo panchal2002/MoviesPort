@@ -1,5 +1,6 @@
 {
   "name": "moviesport",
+  "homepage": "https://panchal2002.github.io/MoviesPort",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +15,7 @@
     "axios": "^0.21.1",
     "firebase": "^8.10.0",
     "fuse.js": "^6.4.6",
+    "gh-pages": "^3.2.3",
     "jquery": "^3.6.0",
     "node-sass": "^6.0.1",
     "normalize.css": "^8.0.1",
@@ -36,6 +38,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
