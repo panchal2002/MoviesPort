@@ -1,0 +1,49 @@
+.collection-grid {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-bottom: 40px;
+
+  &__left-arrow,
+  &__right-arrow {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    z-index: 1;
+    opacity: 0.8;
+    color: white;
+    height: 50%;
+
+    &--icon {
+      cursor: pointer;
+      &:hover {
+        font-size: 3.5rem;
+        color: white;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+
+  &__left-arrow {
+    position: absolute;
+    top: 20%;
+  }
+
+  &__right-arrow {
+    position: absolute;
+    right: 0;
+    top: 20%;
+  }
+
+  &__outer {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+  &__inner {
+    display: inline-flex;
+    flex-direction: row;
+  }
+}

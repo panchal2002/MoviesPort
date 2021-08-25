@@ -1,0 +1,50 @@
+.item-page-footer {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+
+    @media screen and (max-width: 800px) {
+      justify-content: center;
+    }
+  }
+
+  &__btn-container {
+    margin-top: 25px;
+
+    @media screen and (max-width: 800px) {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  &__btn {
+    border: none;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    padding: 9px 11px;
+    background-color: rgba(51, 51, 51, 0.4);
+    border: none;
+    font-weight: 400;
+    margin-right: 30px;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.3s;
+    color: white;
+    width: 150px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    @media screen and (max-width: 600px) {
+      margin: unset;
+      background-color: rgba(51, 51, 51, 0.7);
+    }
+  }
+
+  &__icon {
+    margin-right: 4px;
+  }
+}

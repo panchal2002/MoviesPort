@@ -1,0 +1,123 @@
+.collection-preview {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  height: 270px;
+  overflow: hidden;
+
+  @media screen and (max-width: 800px) {
+    height: 210px;
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    margin-left: 3px;
+
+    @media screen and (max-width: 800px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__collection-item {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    position: relative;
+  }
+
+  &__left-arrow,
+  &__right-arrow {
+    height: 168.4px;
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    z-index: 1;
+    opacity: 1;
+    color: white;
+
+    @media screen and (max-width: 800px) {
+      height: 129.44px;
+      -webkit-visibility: hidden;
+    }
+  }
+
+  &__left-arrow {
+    position: absolute;
+  }
+
+  &__right-arrow {
+    position: absolute;
+    right: 0%;
+  }
+
+  &__left-arrow-icon,
+  &__right-arrow-icon {
+    cursor: pointer;
+
+    &:hover {
+      font-size: 3rem;
+      color: white;
+      transition: all 0.2s ease;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    cursor: pointer;
+    height: 168.4px;
+
+    @media screen and (max-width: 800px) {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 800px) {
+      &:hover {
+        .collection-item {
+          transform: translateX(-25%);
+        }
+      }
+
+      .collection-item:hover ~ .collection-item {
+        transform: translateX(25%);
+      }
+
+      .collection-item:first-child:hover ~ .collection-item {
+        transform: translateX(50%);
+      }
+
+      .collection-item:last-child:hover ~ .collection-item {
+        transform: translateX(-50%);
+      }
+
+      .collection-item {
+        & {
+          transition: transform 300ms ease 100ms;
+        }
+
+        &:first-child {
+          transform-origin: left;
+        }
+
+        &:last-child {
+          transform-origin: right;
+        }
+
+        &:hover {
+          transform: scale(1.5);
+        }
+        &:hover:first-child {
+          transform: scale(1.5);
+        }
+        &:hover:last-child {
+          transform: scale(1.25);
+        }
+      }
+    }
+  }
+}
